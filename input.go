@@ -23,6 +23,7 @@ func GetInput(prefix_message string) string {
 	/* COMMENT: I don't really care about checking for errors etc since this is a simple application. */
 	text, _ := InputReader.ReadString('\n')
 
+	/* COMMENT: These could have been combined into one line. */
 	// Remove last char, which is a newline.
 	text = text[:len(text)-1]
 	return text
