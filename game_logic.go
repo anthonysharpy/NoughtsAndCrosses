@@ -6,6 +6,8 @@ func IsValidMove(move string, board [9]string) bool {
 	}
 
 	switch move {
+	/* COMMENT: Could have done some fancy tricks by converting the string to a byte and evalauting it
+	   as an integer, but this way is much easier to read (and write). */
 	case "1", "2", "3", "4", "5", "6", "7", "8", "9":
 		var index = GetBoardIndexForValidInput(move)
 
@@ -19,14 +21,22 @@ func IsValidMove(move string, board [9]string) bool {
 	}
 }
 
+
 func HasSomeoneWon(board [9]string) bool {
 
+	/* COMMENT: This could easily be shortened with some for loops, but I think that would make the code
+	   unjustifiably harder to read. Doing it this way emphasises that there are exactly 8 ways to win a
+	   game of noughts and crosses. */
+
 	// Horizontal rows.
+
 	if board[0] != "" {
 		if board[0] == board[1] && board[0] == board[2] {
 			return true
 		}
 	}
+	/* COMMENT: Could have made these into one if statement, but I wanted to strongly emphasise that these are two
+	   different layers of logic. */
 	if board[3] != "" {
 		if board[3] == board[4] && board[3] == board[5] {
 			return true

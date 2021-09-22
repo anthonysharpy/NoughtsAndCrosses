@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+/* COMMENT: The brief for this said that the unit tests should expect successes and failures, but I'm
+   not sure what was meant by that, since in theory unit tests should always be successes (if they all pass).
+   I'm assuming it meant to test both possibilities, with I did with the victory/no victory tests. I could have
+   written lots more tests here, but not sure what that would have really demonstrated. */
+
 func TestIsValidMove_TryGibberish(t *testing.T) {
 	var board [9]string
 

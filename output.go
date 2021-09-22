@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// COMMENT: Simple wrapper for fmt.Printf so I don't have to type as much.
 func Print(message string) {
 	fmt.Printf(message)
 }
@@ -14,6 +15,7 @@ func GeneratePadding(contents string) string {
 	return ""
 }
 
+/* COMMENT: This isn't pretty but I can't think of any substantially better ways to do it. */
 func PrintBoard(board [9]string) {
 	Print(`
 |==============|
@@ -28,6 +30,9 @@ func PrintBoard(board [9]string) {
 
 }
 
+/* COMMENT: There is no cross-platform way to clear a terminal, so I didn't even bother trying and
+   just went with this instead. It's possible to use something different depending on the detected OS
+   to clear the terminal, but that just seemed overkill for a simple console application like this. */
 func WipeConsole() {
 	Print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 }

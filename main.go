@@ -1,5 +1,7 @@
 package main
 
+/* COMMENT: Makes the indentation a bit weird but this is the best way to write text as it is meant to be
+   shown IMO. We add some extra line breaks as padding. */
 func ShowIntroduction() {
 	Print(`
 
@@ -10,48 +12,54 @@ You can make your move by entering the numbers 1-9. 1-3 is the first row, 4-6 is
 Press enter to get started.`)
 }
 
-var Board [9]string
-
 func main() {
+	/* COMMENT: Obviously you wouldn't normally put business logic in main() but we might as well since this
+	   is a simple application. */
 	InitialiseInput()
 	WipeConsole()
 	ShowIntroduction()
 	GetInput("")
 
-	var whoseTurn string
+	/* COMMENT: Not sure what kinds of naming conventions are going on in the Go community but this is generally
+	   how variable names are formatted in C and Go is largely based on C, so I went with that. */
+	var whose_turn string
 	var input string
+	var board[9] string
 
-	for turn := 0; turn < 9 && !HasSomeoneWon(Board); turn++ {
+	for turn := 0; turn < 9 && !HasSomeoneWon(board); turn++ {
 		if turn%2 == 0 {
-			whoseTurn = "Player 1"
+			whose_turn = "Player 1"
 		} else {
-			whoseTurn = "Player 2"
+			whose_turn = "Player 2"
 		}
 
 		WipeConsole()
-		PrintBoard(Board)
+		PrintBoard(board)
 
 		input = ""
-		input = GetInput(whoseTurn + ", make your move")
+		input = GetInput(whose_turn + ", make your move")
 
-		for !IsValidMove(input, Board) {
+		for !IsValidMove(input, board) {
 			input = GetInput("Sorry, that move is invalid. Try again")
 		}
 
 		if turn%2 == 0 {
-			Board[GetBoardIndexForValidInput(input)] = "X"
+			board[GetBoardIndexForValidInput(input)] = "X"
 		} else {
-			Board[GetBoardIndexForValidInput(input)] = "O"
+			board[GetBoardIndexForValidInput(input)] = "O"
 		}
 
-		if HasSomeoneWon(Board) {
+		/* COMMENT: If someone has suddenly won then it must be the person who just made a move. */
+		if HasSomeoneWon(board) {
 			WipeConsole()
-			PrintBoard(Board)
-			Print(whoseTurn + " has won!\nThanks for playing!\n")
+			PrintBoard(board)
+			Print(whose_turn + " has won!\nThanks for playing!\n")
 		}
 	}
 
-	if !HasSomeoneWon(Board) {
+	if !HasSomeoneWon(board) {
+		WipeConsole()
+		PrintBoard(board)
 		Print("Nobody won 😢. Better luck next time!\n")
 	}
 }
