@@ -15,8 +15,7 @@ func GeneratePadding(contents string) string {
 }
 
 func PrintBoard(board [9]string) {
-	Print(
-		`
+	Print(`
 |==============|
 |  ` + board[0] + GeneratePadding(board[0]) + ` |  ` + board[1] + GeneratePadding(board[1]) + ` |  ` + board[2] + GeneratePadding(board[2]) + ` |
 |==============|
