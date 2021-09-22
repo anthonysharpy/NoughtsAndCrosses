@@ -20,6 +20,7 @@ func GetInput(prefix_message string) string {
 		fmt.Print(prefix_message + ": ")
 	}
 
+	/* COMMENT: I don't really care about checking for errors etc since this is a simple application. */
 	text, _ := InputReader.ReadString('\n')
 
 	// Remove last char, which is a newline.
