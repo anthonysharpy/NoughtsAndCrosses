@@ -15,6 +15,7 @@ func TestIsValidMove_TryGibberish(t *testing.T) {
 
 	var move string = "lol"
 	if IsValidMove(move, board) {
+		/* COMMENT: Missing space at beginning of string here. Not that it really matters since it's a unit test. */
 		t.Error(move + "should not have been a valid move.")
 	}
 
