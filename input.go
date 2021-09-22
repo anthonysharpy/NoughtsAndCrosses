@@ -29,6 +29,7 @@ func GetInput(prefix_message string) string {
 	return text
 }
 
+/* COMMENT: If you wanted to be really safe you could double-check the input is valid here. */
 func GetBoardIndexForValidInput(input string) int {
 	var result, _ = strconv.Atoi(input)
 	return result - 1
