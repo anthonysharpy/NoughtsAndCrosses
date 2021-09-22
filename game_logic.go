@@ -11,6 +11,7 @@ func IsValidMove(move string, board [9]string) bool {
 	case "1", "2", "3", "4", "5", "6", "7", "8", "9":
 		var index = GetBoardIndexForValidInput(move)
 
+		/* COMMENT: This could have been greatly simplified by doing "return len(board[index]) == 0". Oops! */
 		if len(board[index]) != 0 {
 			return false
 		} else {
