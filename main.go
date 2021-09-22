@@ -27,6 +27,7 @@ func main() {
 	var board[9] string
 
 	for turn := 0; turn < 9 && !HasSomeoneWon(board); turn++ {
+		/* COMMENT: Probably should be a space between the %. I think VS Code auto-formatting messed it up. */
 		if turn%2 == 0 {
 			whose_turn = "Player 1"
 		} else {
