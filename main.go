@@ -24,6 +24,7 @@ func main() {
 	   how variable names are formatted in C and Go is largely based on C, so I went with that. */
 	var whose_turn string
 	var input string
+	/* COMMENT: Although they will have max length of 1, we are storing them as a string instead of a byte to avoid the awkwardness of converting bytes. */
 	var board[9] string
 
 	for turn := 0; turn < 9 && !HasSomeoneWon(board); turn++ {
