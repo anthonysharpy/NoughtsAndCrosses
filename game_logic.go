@@ -30,7 +30,6 @@ func HasSomeoneWon(board [9]string) bool {
 	   game of noughts and crosses. */
 
 	// Horizontal rows.
-
 	if board[0] != "" {
 		if board[0] == board[1] && board[0] == board[2] {
 			return true
