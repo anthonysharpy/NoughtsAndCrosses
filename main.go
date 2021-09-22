@@ -1,7 +1,7 @@
 package main
 
 /* COMMENT: Makes the indentation a bit weird but this is the best way to write text as it is meant to be
-   shown IMO. We add some extra line breaks as padding. */
+   shown IMO. We add some extra line breaks as padding. In hindsight I could make this a constant somewhere and just print it. */
 func ShowIntroduction() {
 	Print(`
 
