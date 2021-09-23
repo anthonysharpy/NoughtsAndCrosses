@@ -38,6 +38,7 @@ func main() {
 		WipeConsole()
 		PrintBoard(board)
 
+		/* COMMENT: The line immediately below is redundant. */
 		input = ""
 		input = GetInput(whose_turn + ", make your move")
 
