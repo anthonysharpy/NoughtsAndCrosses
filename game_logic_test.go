@@ -13,6 +13,7 @@ import (
 func TestIsValidMove_TryGibberish(t *testing.T) {
 	var board [9]string
 
+	/* COMMENT: In hindsight it might have been better to declare an array of "moves" and then go through them all with a for loop. */
 	var move string = "lol"
 	if IsValidMove(move, board) {
 		/* COMMENT: Missing space at beginning of string here. Not that it really matters since it's a unit test. */
@@ -42,6 +43,8 @@ func TestIsValidMove_TryGibberish(t *testing.T) {
 
 func TestHasSomeoneWon_Victories(t *testing.T) {
 
+	/* COMMENT: In hindsight it might have been better to declare an array of boards and then go through them all with a for loop. */
+	
 	// Test horizontal victories.
 	var board = [9]string{"X", "X", "X", "", "", "", "", "", ""}
 	if !HasSomeoneWon(board) {
